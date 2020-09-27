@@ -25,7 +25,7 @@ test_plot <- fb_daten %>%
   geom_bar(stat = "identity") +
   geom_text(aes(label = (rel * 100) %>% round(1) %>% paste0("%")), hjust = -0.1, size = 8,
             family = "serif") +
-  # using labeller and label_bqoute to create
+  # using labeller argument and label_bqoute() to create subscripts
   facet_grid(. ~ zeitpunkt, labeller = label_bquote(cols = T[.(zeitpunkt)])) +
   scale_x_discrete(
     labels = c(
